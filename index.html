@@ -1,23 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starbucks Website Landing Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section>
-        <header>
-            <a href="#" class="logo"><img src="./imgs/logo.png" alt="logo"></a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">What's New?</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </header>
+      <div class="circle"></div>
+      <header>
+        <a href="#"><img src="/imgs/logo.png" class="logo" alt="logo" /></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">What's New?</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>
+            It's not just Coffee<br />
+            It's <span class="starbucksTitle">Starbucks</span>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+            ducimus eveniet perferendis facilis aliquam non numquam odio, itaque
+            omnis inventore iusto eos exercitationem dolorum delectus hic fuga
+            voluptate vitae magnam?
+          </p>
+          <a href="#" class="learnMore">Learn More</a>
+        </div>
+
+        <div class="imgBox">
+          <img src="/imgs/img1.png" alt="coffee-1" class="starbucks" />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+            src="./imgs/thumb1.png"
+            alt="thumb1"
+            onclick="imgSlider('imgs/img1.png')
+            changeCircleColor('#017143')"
+          />
+        </li>
+        <li>
+          <img
+            src="./imgs/thumb2.png"
+            alt="thumb2"
+            onclick="imgSlider('imgs/img2.png')
+            changeCircleColor('#eb7495')"
+          />
+        </li>
+        <li>
+          <img
+            src="./imgs/thumb3.png"
+            alt="thumb3"
+            onclick="imgSlider('imgs/img3.png')
+            changeCircleColor('#d752b1')"
+          />
+        </li>
+      </ul>
+      <ul class="sci">
+        <li>
+          <a href="#"><img src="imgs/facebook.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="imgs/twitter.png" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="imgs/instagram.png" alt="" /></a>
+        </li>
+      </ul>
     </section>
-</body>
+
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".starbucks").src = anything;
+      }
+
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        const title = document.querySelector(".starbucksTitle");
+        const informationButton = document.querySelector(".learnMore");
+        
+        circle.style.backgroundColor = color;
+        title.style.color = color;
+        informationButton.style.backgroundColor = color;
+      }
+    </script>
+  </body>
 </html>
